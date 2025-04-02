@@ -29,236 +29,232 @@ const defaultPalette = {
   },
 };
 
-export const createAppTheme = (customPalette = {}) => {
-  const palette = {
+export const theme = createTheme({
+  direction: "rtl",
+  palette: {
     ...defaultPalette,
-    ...customPalette,
-  };
-
-  return createTheme({
-    direction: "rtl",
-    palette,
-    typography: {
-      fontFamily: ["Heebo", "Arial", "sans-serif"].join(","),
-      allVariants: {
-        color: palette.text.primary,
-      },
-      h1: {
-        fontSize: "3rem",
-        fontWeight: 700,
-        color: palette.text.primary,
-        lineHeight: 1.2,
-        letterSpacing: "-0.02em",
-      },
-      h2: {
-        fontSize: "2.5rem",
-        fontWeight: 700,
-        color: palette.text.primary,
-      },
-      h3: {
-        fontSize: "2rem",
-        fontWeight: 500,
-        color: palette.text.primary,
-      },
-      h4: {
-        fontSize: "1rem",
-        fontWeight: 500,
-        color: palette.text.secondary,
-      },
-      body1: {
-        fontSize: "1rem",
-        lineHeight: 1.5,
-        color: palette.text.secondary,
-      },
-      body2: {
-        fontSize: "0.875rem",
-        lineHeight: 1.5,
-        color: palette.text.secondary,
-      },
+  },
+  typography: {
+    fontFamily: ["Heebo", "Arial", "sans-serif"].join(","),
+    allVariants: {
+      color: defaultPalette.text.primary,
     },
-    components: {
-      MuiTextField: {
-        styleOverrides: {
-          root: {
-            maxWidth: 280,
-            width: 280,
-            "& .MuiInputBase-root.Mui-focused": {
-              border: "none",
-            },
-            "& .MuiInputLabel-root": {
-              fontSize: "1rem",
-              color: palette.text.secondary,
-            },
-            "& .MuiInputBase-root": {
-              outline: "none",
-              padding: "1px 0",
-            },
-            "& .MuiInput-underline:after": {
-              borderBottom: "none",
-            },
-          },
-          error: {
-            borderBottom: `0.2px solid ${palette.text.error}`,
-          },
-        },
-        variants: [
-          {
-            props: { variant: "standard" },
-            style: {
-              borderBottom: `0.2px solid ${palette.text.secondary}`,
-            },
-          },
-        ],
-      },
-      MuiIconButton: {
-        styleOverrides: {
-          root: {
-            cursor: "pointer",
-          },
-        },
-      },
-      MuiTooltip: {
-        styleOverrides: {
-          tooltip: {
-            backgroundColor: palette.text.primary,
-            color: palette.text.secondary,
-            fontSize: "0.875rem",
-            boxShadow: "0px 3px 6px rgba(0,0,0,0.1)",
-          },
-        },
-      },
-      MuiFormControl: {
-        styleOverrides: {
-          root: {
-            maxWidth: 600,
-            margin: "0 auto",
-          },
-        },
-      },
-      MuiFormControlLabel: {
-        styleOverrides: {
-          root: {
-            color: palette.text.secondary,
-            paddingLeft: 8,
-            fontSize: "1rem",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            whiteSpace: "normal",
-            "& .MuiFormControlLabel-label": {
-              whiteSpace: "normal",
-              lineHeight: 1.5,
-            },
-          },
-        },
-      },
-      MuiCheckbox: {
-        styleOverrides: {
-          root: {
-            color: "gray",
-            "&.Mui-checked": {
-              color: palette.primary.main,
-            },
-            marginBottom: 20,
-          },
-        },
-      },
-      MuiButton: {
-        styleOverrides: {
-          root: {
-            borderRadius: 8,
-            padding: "0.75em 2em",
-            minHeight: "3em",
-            fontSize: "1rem",
-            fontWeight: "bold",
-            backgroundColor: palette.primary.main,
-            color: palette.primary.contrastText,
-            boxShadow: "0px 2px 4px rgba(0,0,0,0.1)",
-            transition: "background-color 0.3s ease, box-shadow 0.3s ease",
-            "&:hover": {
-              backgroundColor: palette.primary.dark || "#005cb2",
-              boxShadow: "0px 4px 8px rgba(0,0,0,0.15)",
-            },
-          },
-        },
-      },
-      MuiSelect: {
-        styleOverrides: {
-          root: {
-            outline: "none",
-            maxWidth: 280,
-            width: 280,
-            padding: 0,
-            fontSize: "1rem",
-          },
-          select: {
-            // Additional select-specific styling can be added here.
-          },
-        },
-      },
-      MuiStepper: {
-        styleOverrides: {
-          root: {
-            marginTop: 12,
-          },
-        },
-      },
-      MuiStepConnector: {
-        styleOverrides: {
-          root: {
-            mx: "1em",
-          },
-          line: {
-            borderColor: palette.primary.main,
-            borderTopWidth: 2,
-            borderRadius: 1,
-          },
-          activeLine: {
-            borderColor: palette.primary.main,
-          },
-        },
-      },
-      MuiStepLabel: {
-        styleOverrides: {
-          labelContainer: {
-            position: "relative",
-            top: -50,
-          },
-          label: {
-            color: palette.text.primary,
-            fontSize: "1rem",
-            lineHeight: "28px",
-          },
-        },
-      },
-      MuiStepIcon: {
-        styleOverrides: {
-          root: {
-            backgroundColor: palette.text.secondary,
-            color: palette.text.primary,
-          },
-          completed: {
-            backgroundColor: palette.text.secondary,
-            color: palette.text.primary,
-          },
-          active: {
-            backgroundColor: palette.text.secondary,
-            color: palette.text.primary,
-          },
-        },
-      },
-      MuiInputAdornment: {
-        styleOverrides: {
-          root: {
-            fontSize: "1rem",
-            width: "20%",
+    h1: {
+      fontSize: "3rem",
+      fontWeight: 700,
+      color: defaultPalette.text.primary,
+      lineHeight: 1.2,
+      letterSpacing: "-0.02em",
+    },
+    h2: {
+      fontSize: "2.5rem",
+      fontWeight: 700,
+      color: defaultPalette.text.primary,
+    },
+    h3: {
+      fontSize: "2rem",
+      fontWeight: 500,
+      color: defaultPalette.text.primary,
+    },
+    h4: {
+      fontSize: "1rem",
+      fontWeight: 500,
+      color: defaultPalette.text.secondary,
+    },
+    body1: {
+      fontSize: "1rem",
+      lineHeight: 1.5,
+      color: defaultPalette.text.secondary,
+    },
+    body2: {
+      fontSize: "0.875rem",
+      lineHeight: 1.5,
+      color: defaultPalette.text.secondary,
+    },
+  },
+  components: {
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          maxWidth: 280,
+          width: 280,
+          "& .MuiInputBase-root.Mui-focused": {
             border: "none",
           },
+          "& .MuiInputLabel-root": {
+            fontSize: "1rem",
+            color: defaultPalette.text.secondary,
+          },
+          "& .MuiInputBase-root": {
+            outline: "none",
+            padding: "1px 0",
+          },
+          "& .MuiInput-underline:after": {
+            borderBottom: "none",
+          },
+        },
+        '&.Mui-error': {
+          borderBottom: `0.2px solid ${defaultPalette.text.error}`,
+        },
+      },
+      variants: [
+        {
+          props: { variant: "standard" },
+          style: {
+            borderBottom: `0.2px solid ${defaultPalette.text.secondary}`,
+          },
+        },
+      ],
+    },
+    MuiIconButton: {
+      styleOverrides: {
+        root: {
+          cursor: "pointer",
         },
       },
     },
-  });
-};
+    MuiTooltip: {
+      styleOverrides: {
+        tooltip: {
+          backgroundColor: defaultPalette.text.primary,
+          color: defaultPalette.text.secondary,
+          fontSize: "0.875rem",
+          boxShadow: "0px 3px 6px rgba(0,0,0,0.1)",
+        },
+      },
+    },
+    MuiFormControl: {
+      styleOverrides: {
+        root: {
+          maxWidth: 600,
+          margin: "0 auto",
+        },
+      },
+    },
+    MuiFormControlLabel: {
+      styleOverrides: {
+        root: {
+          color: defaultPalette.text.secondary,
+          paddingLeft: 8,
+          fontSize: "1rem",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          whiteSpace: "normal",
+          "& .MuiFormControlLabel-label": {
+            whiteSpace: "normal",
+            lineHeight: 1.5,
+          },
+        },
+      },
+    },
+    MuiCheckbox: {
+      styleOverrides: {
+        root: {
+          color: "gray",
+          "&.Mui-checked": {
+            color: defaultPalette.primary.main,
+          },
+          marginBottom: 20,
+        },
+      },
+    },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          borderRadius: 8,
+          padding: "0.75em 2em",
+          minHeight: "3em",
+          fontSize: "1rem",
+          fontWeight: "bold",
+          backgroundColor: defaultPalette.primary.main,
+          color: defaultPalette.primary.contrastText,
+          boxShadow: "0px 2px 4px rgba(0,0,0,0.1)",
+          transition: "background-color 0.3s ease, box-shadow 0.3s ease",
+          "&:hover": {
+            backgroundColor: defaultPalette.primary.dark || "#005cb2",
+            boxShadow: "0px 4px 8px rgba(0,0,0,0.15)",
+          },
+        },
+      },
+    },
+    MuiSelect: {
+      styleOverrides: {
+        root: {
+          outline: "none",
+          maxWidth: 280,
+          width: 280,
+          padding: 0,
+          fontSize: "1rem",
+        },
+        select: {
+          // Additional select-specific styling can be added here.
+        },
+      },
+    },
+    MuiStepper: {
+      styleOverrides: {
+        root: {
+          marginTop: 12,
+        },
+      },
+    },
+    MuiStepConnector: {
+      styleOverrides: {
+        root: {
+          mx: "1em",
+        },
+        line: {
+          borderColor: defaultPalette.primary.main,
+          borderTopWidth: 2,
+          borderRadius: 1,
+        },
+        activeLine: {
+          borderColor: defaultPalette.primary.main,
+        },
+      },
+    },
+    MuiStepLabel: {
+      styleOverrides: {
+        labelContainer: {
+          position: "relative",
+          top: -50,
+        },
+        label: {
+          color: defaultPalette.text.primary,
+          fontSize: "1rem",
+          lineHeight: "28px",
+        },
+      },
+    },
+    MuiStepIcon: {
+      styleOverrides: {
+        root: {
+          backgroundColor: defaultPalette.text.secondary,
+          color: defaultPalette.text.primary,
+        },
+        '&.Mui-completed': {
+          backgroundColor: defaultPalette.text.secondary,
+          color: defaultPalette.text.primary,
+        },
+        '&.Mui-active': {
+          backgroundColor: defaultPalette.text.secondary,
+          color: defaultPalette.text.primary,
+        },
+      },
+    },
+    MuiInputAdornment: {
+      styleOverrides: {
+        root: {
+          fontSize: "1rem",
+          width: "20%",
+          border: "none",
+        },
+      },
+    },
+  },
+});
+
 
 export const BackBtnStyles = {
   bgcolor: "rgb(249, 249, 249);",
@@ -272,4 +268,3 @@ export const BackBtnStyles = {
   },
 };
 
-export default createAppTheme;

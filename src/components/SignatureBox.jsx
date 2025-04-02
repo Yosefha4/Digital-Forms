@@ -2,7 +2,7 @@ import { Box, Typography } from "@mui/material";
 import React, { useState } from "react";
 import SignatureCanvas from "react-signature-canvas";
 
-const SignatureBox = ({ width = 350, height = 200, sigRef, handleDrawSignature, handleResetSign, isSubmitted }) => {
+const SignatureBox = ({ width = 280, height = 200, sigRef, handleDrawSignature, handleResetSign, isSubmitted }) => {
   const [isEmpty, setIsEmpty] = useState(true);
 
   const handleResetSignature = () => {
@@ -21,7 +21,8 @@ const SignatureBox = ({ width = 350, height = 200, sigRef, handleDrawSignature, 
           cursor: "crosshair",
           bgcolor: isEmpty && isSubmitted ? "#ffefef" : "transparent",
           borderRadius: "4px",
-          maxWidth: { xs: "300px", sm: "300px", md: "100%" },
+          maxWidth: '280px',
+          // maxWidth: { xs: "300px", sm: "300px", md: "100%" },
         }}
       >
         <SignatureCanvas
