@@ -186,8 +186,8 @@ const FormPage = () => {
           },
         }}
       >
-        <CustomInput id={"input2"} label={"שם משתמש"} regex={null} />
-        <CustomInput id={"input2"} label={"שם משתמש"} regex={null} />
+        <CustomInput id={"input2"} label="מספר בית" regex={null} width={'4.2em'}  />
+        <CustomInput id={"input2"} label={"כניסה"} regex={null}  width={'4.2em'}  />
       </Box>
       <Box>
         <MuiSelectInput label={"רחוב *"} handleChange={(e) => setUserStreet(e.target.value)} items={streetsData?.STREETS_ROW} />

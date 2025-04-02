@@ -121,7 +121,6 @@ const CustomInput = ({
           tabIndex={0}
           sx={{
             borderBottom: error ? "0.2px solid red" : "none",
-            // borderBottom: error ? "0.2px solid red" : "0.2px solid #2b2c32",
             width: width || "280px",
           }}
           slotProps={{
