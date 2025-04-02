@@ -1,0 +1,10 @@
+.my-container {
+    background-color: #333;                      /* Fallback background color */
+    background-image: url('your-image.jpg');      /* Background image */
+    background-position: center center;           /* Centered horizontally and vertically */
+    background-size: cover;                       /* Scale image to cover container */
+    background-repeat: no-repeat;                 /* Prevent image tiling */
+    background-attachment: fixed;                 /* Image stays fixed during scroll */
+    background-blend-mode: multiply;              /* Blends image with background color */
+  }
+  
